@@ -1,0 +1,6 @@
+[
+  {"question": "When was Pokémon Gold and Silver released?", "expect_any": ["1999"], "expect_source": "knowledge_base"},
+  {"question": "Which one was the first 3D platformer Mario game?", "expect_any": ["Super Mario 64"], "expect_source": null},
+  {"question": "Was Mortal Kombat X released for PlayStation 5?", "expect_any": ["PlayStation 4", "not originally", "PlayStation 5"], "expect_source": null},
+  {"question": "Who published Gran Turismo?", "expect_any": ["Sony"], "expect_source": "knowledge_base"}
+]

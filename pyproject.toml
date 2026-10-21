@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "research-agent"
+version = "0.1.0"
+description = "A tool-using research agent for video game questions: RAG over a local knowledge base, LLM-judged retrieval quality, and web-search fallback."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "openai>=1.40",
+    "chromadb>=0.5",
+    "tavily-python>=0.5",
+    "pydantic>=2.6",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+research-agent = "research_agent.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/research_agent"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
